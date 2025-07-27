@@ -16,7 +16,7 @@ const Discriptiveai = () => {
       }
     };
   return (
-   <Box sx={{ height: '30vh', display: 'flex', flexDirection: 'column', padding: 2 }}>
+   <Box sx={{ display: 'flex', flexDirection: 'column', padding: 2 }}>
       <Card
         sx={{
           flex: 1,

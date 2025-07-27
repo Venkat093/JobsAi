@@ -10,17 +10,17 @@ const Appwrapper = () => {
       {/* Header */}
       <div style={styles.header}>www.interviewcopilot.com</div>
 
-      {/* Main layout after header */}
-      <div style={styles.main}>
-        {/* Top row (40%) */}
-        <div style={styles.topRow}>
+      {/* Grid Layout */}
+      <div style={styles.grid}>
+        {/* Left Column: Nested Grid */}
+        <div style={styles.leftColumn}>
           <div style={styles.profile}><Profile /></div>
-          <div style={styles.discriptive}><Discriptiveai /></div>
+          <div style={styles.resume}><Resume /></div>
         </div>
 
-        {/* Bottom row (60%) */}
-        <div style={styles.bottomRow}>
-          <div style={styles.resume}><Resume /></div>
+        {/* Right Column: Nested Grid */}
+        <div style={styles.rightColumn}>
+          <div style={styles.discriptive}><Discriptiveai /></div>
           <div style={styles.code}><Codeai /></div>
         </div>
       </div>
@@ -35,53 +35,60 @@ const styles = {
     height: '100vh',
     width: '100vw',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    boxSizing: 'border-box'
   },
   header: {
     height: `${HEADER_HEIGHT}px`,
     textAlign: 'center',
     fontWeight: 'bold',
     lineHeight: `${HEADER_HEIGHT}px`,
-    borderBottom: '2px solid black'
+    borderBottom: '2px solid black',
+    boxSizing: 'border-box'
   },
-  main: {
-    flex: 1, // remaining height after header
-    display: 'flex',
-    flexDirection: 'column'
+  grid: {
+    flex: 1,
+    display: 'grid',
+    gridTemplateColumns: '30% 70%',
+    height: `calc(100vh - ${HEADER_HEIGHT}px)`,
+    width: '100%',
+    boxSizing: 'border-box'
   },
-  topRow: {
-    flexBasis: '40%',
-    display: 'flex',
-    flexDirection: 'row',
-    borderBottom: '2px solid black'
-  },
-  bottomRow: {
-    flexBasis: '60%',
-    display: 'flex',
-    flexDirection: 'row'
+  leftColumn: {
+    display: 'grid',
+    gridTemplateRows: '40% 60%',
+    borderRight: '2px solid black',
+    height: '100%',
+    boxSizing: 'border-box'
   },
   profile: {
-    width: '30%',
-    borderRight: '2px solid black',
+    borderBottom: '2px solid black',
     padding: '10px',
+    boxSizing: 'border-box',
+    overflow: 'auto'
+  },
+  resume: {
+    padding: '10px',
+    boxSizing: 'border-box',
+    overflow: 'auto'
+  },
+  rightColumn: {
+    display: 'grid',
+    gridTemplateRows: '60% 40%',
+    height: '100%',
     boxSizing: 'border-box'
   },
   discriptive: {
-    width: '70%',
-    padding: '10px',
-    boxSizing: 'border-box'
-  },
-  resume: {
-    width: '30%',
-    borderRight: '2px solid black',
-    padding: '10px',
-    boxSizing: 'border-box'
-  },
-  code: {
-    width: '70%',
+    borderBottom: '2px solid black',
     padding: '10px',
     boxSizing: 'border-box',
-    borderTop: '2px solid black' // Optional: visual separation within bottom
+    overflow: 'auto'
+  },
+  code: {
+    borderTop: '2px solid black',
+    padding: '10px',
+    boxSizing: 'border-box',
+    overflow: 'auto'
   }
 };
 

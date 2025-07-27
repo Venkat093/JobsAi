@@ -17,7 +17,7 @@ const Codeai = () => {
   };
 
   return (
-    <Box sx={{ height: '60vh', display: 'flex', flexDirection: 'column', padding: 2 }}>
+    <Box sx={{  display: 'flex', flexDirection: 'column', padding: 2 }}>
       <Card
         sx={{
           flex: 1,
